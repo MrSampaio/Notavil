@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		362E0C4D2FEC9209005FAE28 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C4B2FEC9201005FAE28 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		362E0C3D2FEC90F5005FAE28 /* Notavil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notavil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		362E0C4B2FEC9201005FAE28 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		362E0C342FEC90F5005FAE28 = {
 			isa = PBXGroup;
 			children = (
+				362E0C4B2FEC9201005FAE28 /* .gitignore */,
 				362E0C3F2FEC90F5005FAE28 /* Notavil */,
 				362E0C3E2FEC90F5005FAE28 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362E0C4D2FEC9209005FAE28 /* .gitignore in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
