@@ -34,20 +34,15 @@ project.xcworkspace/
 # =========================
 .build/
 Packages/
-# Nota: O arquivo 'Package.resolved' não está aqui pois DEVE ser comitado
-# para garantir que outros devs usem a mesma versão das dependências.
 
 # =========================
-# CocoaPods (Caso utilize no futuro)
+# CocoaPods
 # =========================
 Pods/
-# Nota: O arquivo 'Podfile.lock' também deve ser comitado.
 
 # =========================
 # Supabase / Segurança e Configurações
 # =========================
-# NUNCA suba suas chaves do Supabase (URL e Anon Key) no repositório!
-# Mantenha-as nestes arquivos e adicione-os apenas localmente.
 .env
 *.xcconfig
 Secrets.swift
@@ -57,9 +52,6 @@ APIKeys.swift
 # =========================
 # Google Sign-In / Firebase
 # =========================
-# O arquivo de configuração do Google contém IDs e chaves do seu projeto.
-# Se o seu repositório for PÚBLICO, é fortemente recomendado ignorá-lo.
-# (Lembre-se de avisar no README que os devs precisam baixar o próprio arquivo).
 GoogleService-Info.plist
 
 # =========================
