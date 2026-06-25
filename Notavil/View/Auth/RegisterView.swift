@@ -15,69 +15,76 @@ struct RegisterView: View{
     @State private var lastName = ""
     
     var body: some View {
-            Text("Cadastro")
-                .fontWeight(.bold)
-            Image(.swift)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 120, height: 120)
-                .padding()
+        NavigationStack {
             VStack{
-                TextField("Nome", text: $firstName)
-                    .autocapitalization(.none)
-                    .padding(12)
-                    .background(Color(.systemGray4))
-                    .foregroundColor(Color(.black))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 24)
-                
-                TextField("Sobrenome", text: $lastName)
-                    .autocapitalization(.none)
-                    .padding(12)
-                    .background(Color(.systemGray4))
-                    .foregroundColor(Color(.black))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 24)
-                
-                TextField("Email", text: $email)
-                    .autocapitalization(.none)
-                    .padding(12)
-                    .background(Color(.systemGray4))
-                    .foregroundColor(Color(.black))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 24)
-                
-                SecureField("Senha", text: $password)
-                    .autocapitalization(.none)
-                    .padding(12)
-                    .background(Color(.systemGray4))
-                    .foregroundColor(Color(.white))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 24)
-                
-                Button{} label: {
-                    Text("Cadastrar")
-                        .frame(width: 350, height: 50)
-                        .background(Color(.blue))
-                        .foregroundColor(Color(.white))
-                        .fontWeight(.bold)
-                        .cornerRadius(20)
-                        
-                } .padding(.vertical)
-                
-                NavigationLink{
-                    LoginView()
-                } label: {
-                    Text("Faça seu login aqui")
-                        .foregroundColor(Color(.blue))
+                Text("Cadastro")
+                    .fontWeight(.bold)
+                Image(.swift)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 120)
+                    .padding()
+                VStack{
+                    TextField("Nome", text: $firstName)
+                        .autocapitalization(.none)
+                        .padding(12)
+                        .background(Color(.systemGray4))
+                        .foregroundColor(Color(.black))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 24)
                     
-                } .padding(.vertical, 50)
-
+                    TextField("Sobrenome", text: $lastName)
+                        .autocapitalization(.none)
+                        .padding(12)
+                        .background(Color(.systemGray4))
+                        .foregroundColor(Color(.black))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 24)
+                    
+                    TextField("Email", text: $email)
+                        .autocapitalization(.none)
+                        .padding(12)
+                        .background(Color(.systemGray4))
+                        .foregroundColor(Color(.black))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 24)
+                    
+                    SecureField("Senha", text: $password)
+                        .autocapitalization(.none)
+                        .padding(12)
+                        .background(Color(.systemGray4))
+                        .foregroundColor(Color(.white))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 24)
+                    
+                    Button{} label: {
+                        Text("Cadastrar")
+                            .frame(width: 350, height: 50)
+                            .background(Color(.blue))
+                            .foregroundColor(Color(.white))
+                            .fontWeight(.bold)
+                            .cornerRadius(20)
+                        
+                    } .padding(.vertical)
+                    
+                    NavigationLink{
+                        LoginView()
+                    } label: {
+                        Text("Faça seu login aqui")
+                            .foregroundColor(Color(.blue))
+                        
+                    } .padding(.vertical, 50)
+                    
+                }
+                
             }
-            
+        }
         }
     }
     
 #Preview {
-    RegisterView()
+    NavigationStack{
+        RegisterView()
+    }
+    
 }
