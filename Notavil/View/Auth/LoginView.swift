@@ -67,6 +67,7 @@ struct LoginView: View {
 
 private extension LoginView{
     func login(){
+        authManager.authStatus = .notDetermined
         Task{
             await authManager.login(containsEmail: email, password: password)
         }

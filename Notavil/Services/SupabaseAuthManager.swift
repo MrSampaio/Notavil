@@ -38,6 +38,7 @@ final class AuthManager{
     
     func signOut() async{
         do{
+            self.authStatus = .notDetermined
             try await service.signOut()
             self.authStatus = .notAuthenticated
         } catch{
