@@ -36,7 +36,7 @@ final class AuthManager{
         }
     }
     
-    func signOut() async throws{
+    func signOut() async{
         do{
             try await service.signOut()
         } catch{
@@ -46,8 +46,14 @@ final class AuthManager{
         
     }
     
-    func getAuthStatus() async throws{
-        self.authStatus = try await service.getAuthStatus()
+    func getAuthStatus() async{
+        do{
+            self.authStatus = try await service.getAuthStatus()
+        } catch{
+            self.error = error
+            print("ERROR: Failed to get auth status: \(error)")
+        }
+        
     }
     
 }

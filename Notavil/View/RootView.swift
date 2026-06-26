@@ -11,13 +11,29 @@ struct RootView: View {
     @Environment(AuthManager.self) private var authManager
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Group{
+            if(authManager.authStatus == .authenticated){
+                VStack {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text("Login deu certo!!!!!!")
+                    
+                    Button("Fazer logout"){
+                        Task{await authManager.signOut()}
+                    }
+                }
+                .padding()
+            } else if(authManager.authStatus == .notAuthenticated){
+                LoginView()
+            } else{
+                ProgressView()
+            }
+        }  .task{await authManager.getAuthStatus()}
+
+        
+           
+        
     }
 }
 
