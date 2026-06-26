@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
+    @Environment(AuthManager.self) private var authManager
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")

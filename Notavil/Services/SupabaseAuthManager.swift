@@ -12,6 +12,7 @@ import Foundation
 final class AuthManager{
     private let service: SupabaseAuthServices
     var error: Error?
+    var authStatus: AuthState = .notDetermined
     
     init(service: SupabaseAuthServices){
         self.service = service
@@ -19,7 +20,7 @@ final class AuthManager{
     
     func login(containsEmail email: String, password: String) async {
         do{
-            try await service.login(containsEmail: email, password: password)
+            self.authStatus = try await service.login(containsEmail: email, password: password)
         } catch{
             self.error = error
             print("ERROR: Login service failed: \(error)")
@@ -28,7 +29,7 @@ final class AuthManager{
     
     func signUp(containsEmail email: String, password: String) async {
         do{
-            try await service.signUp(containsEmail: email, password: password)
+            self.authStatus = try await service.signUp(containsEmail: email, password: password)
         } catch{
             self.error = error
             print("ERROR: Sign Up service failed: \(error)")
@@ -46,7 +47,7 @@ final class AuthManager{
     }
     
     func getAuthStatus() async throws{
-        
+        self.authStatus = try await service.getAuthStatus()
     }
     
 }
