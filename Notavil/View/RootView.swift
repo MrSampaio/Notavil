@@ -19,9 +19,15 @@ struct RootView: View {
                         .foregroundStyle(.tint)
                     Text("Login deu certo!!!!!!")
                     
-                    Button("Fazer logout"){
-                        Task{await authManager.signOut()}
-                    }
+                    Button{signOut()} label: {
+                        Text("Fazer logout")
+                            .frame(width: 350, height: 50)
+                            .background(Color(.blue))
+                            .foregroundColor(Color(.white))
+                            .fontWeight(.bold)
+                            .cornerRadius(20)
+                        
+                    } .padding(.vertical)
                 }
                 .padding()
             } else if(authManager.authStatus == .notAuthenticated){
@@ -34,6 +40,14 @@ struct RootView: View {
         
            
         
+    }
+}
+
+private extension RootView{
+    func signOut(){
+        Task{
+            await authManager.signOut()
+        }
     }
 }
 

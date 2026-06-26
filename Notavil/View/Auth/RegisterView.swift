@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RegisterView: View{
+    @Environment(AuthManager.self) private var authManager
     @State private var email = ""
     @State private var password = ""
     @State private var firstName = ""
@@ -57,7 +58,7 @@ struct RegisterView: View{
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
                     
-                    Button{} label: {
+                    Button{signUp()} label: {
                         Text("Cadastrar")
                             .frame(width: 350, height: 50)
                             .background(Color(.blue))
@@ -79,8 +80,18 @@ struct RegisterView: View{
                 
             }
         }
-        }
     }
+}
+
+private extension RegisterView{
+    func signUp(){
+        Task{
+            await authManager.signUp(containsEmail: email, password: password)
+        }
+        
+    }
+}
+
     
 #Preview {
     NavigationStack{
