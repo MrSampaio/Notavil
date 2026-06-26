@@ -39,6 +39,7 @@ final class AuthManager{
     func signOut() async{
         do{
             try await service.signOut()
+            self.authStatus = .notAuthenticated
         } catch{
             self.error = error
             print("ERROR: Sign Out service failed: \(error)")
