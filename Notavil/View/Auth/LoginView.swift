@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(AuthManager.self) private var authManager
     @State private var email = ""
     @State private var password = ""
     
@@ -39,7 +40,7 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
                     
-                    Button{} label: {
+                    Button{ login() } label: {
                         Text("Login")
                             .frame(width: 350, height: 50)
                             .background(Color(.blue))
@@ -61,6 +62,14 @@ struct LoginView: View {
             }
         }
         
+    }
+}
+
+private extension LoginView{
+    func login(){
+        Task{
+            await authManager.login(containsEmail: email, password: password)
+        }
     }
 }
 

@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Supabase
 
 @main
 struct NotavilApp: App {
+    @State private var authManager = AuthManager(service: SupabaseAuthServices())
+    
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(authManager)
         }
     }
 }
