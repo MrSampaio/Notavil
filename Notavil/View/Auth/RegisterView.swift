@@ -87,7 +87,7 @@ private extension RegisterView{
     func signUp(){
         authManager.authStatus = .notDetermined
         Task{
-            await authManager.signUp(containsEmail: email, password: password)
+            await authManager.signUp(containsEmail: email, password: password, firstName: firstName, lastName: lastName)
         }
         
     }

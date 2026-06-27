@@ -27,12 +27,13 @@ final class AuthManager{
         }
     }
     
-    func signUp(containsEmail email: String, password: String) async {
+    func signUp(containsEmail email: String, password: String, firstName: String, lastName: String) async {
         do{
-            self.authStatus = try await service.signUp(containsEmail: email, password: password)
+            self.authStatus = try await service.signUp(containsEmail: email, password: password, firstName: firstName, lastName: lastName)
         } catch{
             self.error = error
             print("ERROR: Sign Up service failed: \(error)")
+            // self.authStatus = .notAuthenticated
         }
     }
     
