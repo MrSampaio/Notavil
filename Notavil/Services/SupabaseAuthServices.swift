@@ -22,8 +22,19 @@ struct SupabaseAuthServices{
         return .authenticated
     }
     
-    func signUp(containsEmail email: String, password: String) async throws -> AuthState{
-        try await client.auth.signUp(email: email, password: password)
+    func signUp(containsEmail email: String, password: String, firstName: String, lastName: String) async throws -> AuthState{
+        
+        let userMetaData: [String: AnyJSON] = [
+            "first_name": .string(firstName),
+            "last_name": .string(lastName)
+        ]
+        
+        try await client.auth.signUp(
+            email: email,
+            password: password,
+            data: userMetaData
+        )
+        
         return .authenticated
     }
     
