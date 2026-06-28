@@ -1,5 +1,5 @@
 #  SQL Triggers and Functions for Supabase
-
+## IMPORTANT: Run one by one, in order!
 
 
 
@@ -44,4 +44,7 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
   
-  ## =======================================================
+## =======================================================
+
+
+
