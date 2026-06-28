@@ -47,4 +47,13 @@ create trigger on_auth_user_created
 ## =======================================================
 
 
+## =======================================================
+## RLS to enable users see their data after logged
 
+ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "users can see their own profiles" 
+ON public.users 
+FOR SELECT 
+USING ( auth.uid() = id );
+## =======================================================
