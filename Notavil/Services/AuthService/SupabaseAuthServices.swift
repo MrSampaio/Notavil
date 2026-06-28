@@ -43,7 +43,7 @@ struct SupabaseAuthServices{
     }
     
     func getAuthStatus() async throws -> AuthState{
-        let user = try? await client.auth.session.user
-        return user == nil ? .notAuthenticated : .authenticated
+        let session = try? await client.auth.session.user
+        return session == nil ? .notAuthenticated : .authenticated
     }
 }

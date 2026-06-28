@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		362E0C4D2FEC9209005FAE28 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 362E0C4B2FEC9201005FAE28 /* .gitignore */; };
 		362E0C6A2FEDEBDE005FAE28 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 362E0C692FEDEBDE005FAE28 /* Supabase */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				362E0C4D2FEC9209005FAE28 /* .gitignore in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

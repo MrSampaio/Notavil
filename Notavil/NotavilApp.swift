@@ -11,11 +11,13 @@ import Supabase
 @main
 struct NotavilApp: App {
     @State private var authManager = AuthManager(service: SupabaseAuthServices())
+    @State private var supabaseDataManager = SupabaseDataManager(service: SupabaseDataServices())
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(authManager)
+                .environment(supabaseDataManager)
         }
     }
 }
