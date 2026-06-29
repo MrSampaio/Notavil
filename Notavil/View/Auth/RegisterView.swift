@@ -95,8 +95,11 @@ private extension RegisterView{
 
     
 #Preview {
-    NavigationStack{
+    let previewAuthManager = AuthManager(service: SupabaseAuthServices())
+    
+    return NavigationStack {
         RegisterView()
     }
-    
+
+    .environment(previewAuthManager)
 }

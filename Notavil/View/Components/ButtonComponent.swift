@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ButtonComponent: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+
+#Preview {
+    ButtonComponent()
+}

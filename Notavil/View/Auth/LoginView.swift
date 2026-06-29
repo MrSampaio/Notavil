@@ -75,8 +75,11 @@ private extension LoginView{
 }
 
 #Preview {
-    NavigationStack{
+    let previewAuthManager = AuthManager(service: SupabaseAuthServices())
+    
+    return NavigationStack {
         LoginView()
     }
-   
+    
+    .environment(previewAuthManager)
 }
