@@ -18,7 +18,7 @@ struct LoginView: View {
             VStack{
                 Text("Login")
                     .fontWeight(.bold)
-                Image(.swift)
+                Image("swift")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 120, height: 120)
